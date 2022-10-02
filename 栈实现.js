@@ -21,5 +21,13 @@ class Stack {
   isEmpty() {
     return this.data.length === 0
   }
+  // peek() 查看栈顶元素
+  peek() {
+    return this.data[this.data.length - 1];
+  }
+  // size() 获取栈中元素个数
+  size() {
+    return this.data.length
+  }
 
 }

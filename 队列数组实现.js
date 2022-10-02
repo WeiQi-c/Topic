@@ -33,8 +33,7 @@ class Queue {
     return this.count
   }
   clear() {
-    // this.queue = []
-    this.length = 0
+    this.queue = []
     this.count = 0
   }
 }
