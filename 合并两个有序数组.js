@@ -1,4 +1,11 @@
-function mergeArrs (nums1, m, nums2, n) {
+/**
+ * 两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使 num1 成为一个有序数组。
+ * 输入:
+ * nums1 = [1,2,3,0,0,0], m = 3
+ * nums2 = [2,5,6],       n = 3
+ * 输出: [1,2,2,3,5,6]
+ */
+function mergeArrs(nums1, m, nums2, n) {
   let len1 = m - 1,
       len2 = n - 1,
       len = m + n - 1

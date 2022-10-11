@@ -28,5 +28,5 @@ function flat(arr, num = 1) {
     : arr.slice()
 }
 
-const arr = [1, 2, 3, [4, 5, ['j', 'k'], 6], [7]]
+const arr = [1, 8, 6, [10, 9, [4, 2], 5], [7]]
 console.log(flat(arr, Infinity))
