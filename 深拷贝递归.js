@@ -29,13 +29,22 @@ function deepClone(obj, cache = new WeakMap()) {
 
   cache.set(obj, cloneObj) // 缓存对象，用于循环引用的情况
 
-  Reflect.ownKeys(obj).forEach((key) => {
+  // Reflect.ownKeys(obj).forEach((key) => {
+  //   if (obj[key] !== null && typeof obj[key] === 'object') {
+  //     cloneObj[key] = deepClone(obj[key], cache)
+  //   } else {
+  //     cloneObj[key] = obj[key]
+  //   }
+  // })
+
+  for (let key in obj) {
     if (obj[key] !== null && typeof obj[key] === 'object') {
       cloneObj[key] = deepClone(obj[key], cache)
     } else {
       cloneObj[key] = obj[key]
     }
-  })
+  }
+
   return cloneObj
 }
 

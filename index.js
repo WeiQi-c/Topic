@@ -25,3 +25,35 @@ const maximumSwap = function (num) {
 }
 
 console.log(maximumSwap(1124))
+
+
+function getExpirationDate(year, month, day) {
+  // TODO
+  switch (month) {
+    case 12: // 12月 考虑年份的增加
+      year += 1
+      month = 1
+      break
+    case 1: // 一月 考虑是否为闰年 闰年的2月天数29
+      month += 1
+      if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) { // 闰年
+        if (day > 28) { // 一月29 - 31，到期时间为下个月 29
+          day = 29
+        }
+      } else {
+        if (day > 27) { // 一月29 - 31，到期时间为下个月 28
+          day = 28
+        }
+      }
+      break
+    default:
+      month += 1
+      break
+  }
+  return [year, month, day];
+}
+
+console.log(getExpirationDate(2020, 2, 29))
+console.log(getExpirationDate(2018, 11, 10))
+console.log(getExpirationDate(2018, 12, 10))
+console.log(getExpirationDate(2019, 1, 30))

@@ -1,4 +1,5 @@
 Function.prototype.myCall = function (context, ...args) {
+  // context传入的是一个非真值的对象时，context指向window
   context = context || window
   const symbolKey = Symbol()
   //给context添加一个方法 指向this
@@ -7,3 +8,16 @@ Function.prototype.myCall = function (context, ...args) {
   delete context[symbolKey] // 执行完借用的函数后，删除掉
   return res
 }
+
+const mbs = {
+  name: '麻不烧',
+  say(prefix, age) {
+    console.log(this.name)
+  }
+}
+
+const A = {
+  name: '小丁'
+}
+
+mbs.say.call(0)
