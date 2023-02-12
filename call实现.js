@@ -12,7 +12,7 @@ Function.prototype.myCall = function (context, ...args) {
 const mbs = {
   name: '麻不烧',
   say(prefix, age) {
-    console.log(this.name)
+    console.log(this.name, prefix, age)
   }
 }
 
@@ -20,4 +20,4 @@ const A = {
   name: '小丁'
 }
 
-mbs.say.call(0)
+mbs.say.myCall(A, 'asd', 12)

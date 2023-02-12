@@ -24,7 +24,7 @@ const maximumSwap = function (num) {
   return parseInt(arr.join(''))
 }
 
-console.log(maximumSwap(1124))
+// console.log(maximumSwap(1124))
 
 
 function getExpirationDate(year, month, day) {
@@ -53,7 +53,5 @@ function getExpirationDate(year, month, day) {
   return [year, month, day];
 }
 
-console.log(getExpirationDate(2020, 2, 29))
-console.log(getExpirationDate(2018, 11, 10))
-console.log(getExpirationDate(2018, 12, 10))
-console.log(getExpirationDate(2019, 1, 30))
+// console.log(getExpirationDate(2020, 2, 29))
+// console.log(getExpirationDate(2018, 11, 10))

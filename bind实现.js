@@ -9,15 +9,17 @@ Function.prototype.myBind = function (target, ...outArgs) {
   }
 }
 
-let obj1 = {
-  name: 'tom',
-  say: function () {
-    console.log(this.name)
+const mbs = {
+  name: '麻不烧',
+  say(prefix, age) {
+    console.log(this.name, prefix, age)
   }
 }
 
-let obj2 = {
-  name: 'jerry'
+const A = {
+  name: '小丁'
 }
 
-obj1.say.myBind(obj2)()
+let res = mbs.say.myBind(A, 'asd')
+
+res(12)

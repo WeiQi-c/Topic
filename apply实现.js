@@ -6,3 +6,16 @@ Function.prototype.myApply = function (context, args) { // 这里第二个参数
   delete context[symbolKey] // 执行完借用的函数后，删除掉，留着过年吗？
   return res
 }
+
+const mbs = {
+  name: '麻不烧',
+  say(prefix, age) {
+    console.log(this.name, prefix, age)
+  }
+}
+
+const A = {
+  name: '小丁'
+}
+
+mbs.say.myApply(A, ['asd', 12])
